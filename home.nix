@@ -22,6 +22,8 @@
 
   # Enable Home Manager to manage itself
   programs.home-manager.enable = true;
+
+
   programs.git = {
   enable = true;
   userEmail = "AlecJamesFowler@protonmail.com";

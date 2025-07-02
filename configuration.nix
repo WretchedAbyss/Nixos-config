@@ -179,6 +179,15 @@
       safe.directory = "/etc/nixos"; # Mark /etc/nixos as safe for Git
     };
   };
+  programs.ssh = {
+    startAgent = true;
+    extraConfig = ''
+      Host github.com
+        User git
+        IdentityFile /etc/ssh/ssh_host_ed25519_key
+        AddKeysToAgent yes
+    '';
+    };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
