@@ -1,0 +1,5 @@
+* { font-family: monospace; font-size: 14px; padding: 0; margin: 0; }
+window#waybar { background: #2e3440; color: #eceff4; }
+#workspaces button { padding: 0 10px; color: #eceff4; }
+#workspaces button.focused { background: #5e81ac; }
+#clock, #battery, #network, #pulseaudio, #tray { padding: 0 10px; }
