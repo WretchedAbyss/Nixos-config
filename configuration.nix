@@ -11,9 +11,23 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
+  boot.loader = {
+     grub = {
+       enable = true;
+       device = "nodev";
+       efiSupport = true;
+       #useOSProber = true;
+       default = "saved";
+       gfxmodeEfi = "1920x1200";
+            
+     };
+     efi = {
+       canTouchEfiVariables = true;
+       efiSysMountPoint = "/boot";
+     };
+     #systemd-boot.enable = true;
+     timeout = 5;
+};
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -102,6 +116,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+
+  # Essential
+  os-prober
+
   # Text Editors
   neovim
   vscodium
@@ -114,6 +132,8 @@
   #zoxide         # Smart cd command
   fzf            # Fuzzy finder
   tofi           # Launcher/menu
+  hyprland-workspaces 
+
 
   # File and Archive Management
   yazi           # File manager
@@ -192,6 +212,7 @@
   # started in user sessions.
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {
+
   #   enable = true;
   #   enableSSHSupport = true;
   # };

@@ -20,6 +20,9 @@
   xdg.configFile."waybar/config.jsonc".source = ./dotfiles/waybar/config.jsonc;
   xdg.configFile."waybar/style.css".source = ./dotfiles/waybar/style.css;
 
+  # Tofi Config
+  xdg.configFile."tofi/config".source = ./dotfiles/tofi/config;
+
   # Enable Home Manager to manage itself
   programs.home-manager.enable = true;
 
