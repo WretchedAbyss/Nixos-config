@@ -1,0 +1,3 @@
+[Environment]
+GTK_CURSOR_THEME=Bibata-Modern-Ice
+ELECTRON_OZONE_PLATFORM=x11

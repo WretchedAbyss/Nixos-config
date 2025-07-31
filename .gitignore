@@ -1,0 +1,4 @@
+.git
+flake.lock
+configuration.nix.save
+modules/local.nix

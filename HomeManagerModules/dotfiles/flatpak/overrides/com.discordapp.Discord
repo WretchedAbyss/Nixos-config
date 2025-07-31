@@ -1,0 +1,8 @@
+[Context]
+ filesystems=~/.local/share/icons:ro;xdg-data/icons:ro;/usr/share/icons:ro;${pkgs.bibata-cursors}/share/icons:ro
+
+[Environment]
+XCURSOR_THEME=Bibata-Modern-Ice
+XCURSOR_SIZE=24
+GTK_CURSOR_THEME=Bibata-Modern-Ice
+ELECTRON_OZONE_PLATFORM=x11

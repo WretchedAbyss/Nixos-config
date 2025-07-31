@@ -1,0 +1,37 @@
+@import "../../.cache/wallust/colors.css";
+
+* {
+  font-family: "FiraCode Nerd Font", monospace;
+  font-size: 14px;
+  padding: 0px;
+  margin: 0px;
+}
+
+window#waybar {
+  background: @background;
+  color: @foreground;
+}
+
+#custom-launcher {
+  padding: 0 12px;
+  color: @foreground;
+  background: @color0;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+#custom-launcher:hover {
+  background: @accent;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  color: @foreground;
+}
+
+#workspaces button.focused {
+  background: @accent;
+}
+
+#clock, #battery, #network, #pulseaudio, #tray {
+  padding: 0 10px;
+}

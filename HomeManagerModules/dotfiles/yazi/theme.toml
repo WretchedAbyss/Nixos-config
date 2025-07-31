@@ -1,0 +1,21 @@
+[manager]
+cwd = { fg = "#88c0d0" }  # Current working directory
+hovered = { fg = "#eceff4", bg = "#4c566a" }  # Hovered file
+preview_hovered = { underline = true }
+find_keyword = { fg = "#ebcb8b", bold = true }
+find_position = { fg = "#b48ead", italic = true }
+marker_selected = { fg = "#a3be8c" }
+marker_copied = { fg = "#ebcb8b" }
+marker_cut = { fg = "#bf616a" }
+[status]
+separator_open = ""
+separator_close = ""
+separator_style = { fg = "#4c566a", bg = "#4c566a" }
+mode_normal = { fg = "#2e3440", bg = "#88c0d0", bold = true }
+mode_select = { fg = "#2e3440", bg = "#a3be8c", bold = true }
+mode_unset = { fg = "#2e3440", bg = "#bf616a", bold = true }
+[input]
+border = { fg = "#88c0d0" }
+title = { fg = "#eceff4" }
+value = { fg = "#eceff4" }
+selected = { bg = "#4c566a" }

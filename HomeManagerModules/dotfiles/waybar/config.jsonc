@@ -1,0 +1,86 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "modules-left": ["custom/launcher", "hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["custom/weather","battery", "network", "pulseaudio#headphones","pulseaudio#microphone", "tray"],
+  
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "tooltip-format": "{:%A, %B %d, %Y (%H:%M %p)}",
+    "on-click": "kitty -e calcure" // Launch calcure in kitty    
+   },  
+   "custom/weather": {
+    "exec": "bash $HOME/.config/waybar/weather.sh",
+    "format":"{text}",
+    "interval": 10800, // Update every 3 hours
+    "tooltip": true,
+    "return-type": "json",
+    "on-click": "kitty --detach sh -c 'location=$($HOME/.config/waybar/weather.sh | jq -r .location); curl wttr.in/\"$location\"; read -p \"Press Enter to close...\"'"
+  },
+  "battery": { "format": "{capacity}% {icon}", "format-icons": ["", "", "", "", ""] },
+  
+
+  "network": { "format-wifi": "{essid} ({signalStrength}%) ", "format-ethernet": "Connected \udb80\ude00", "format-disconnected": "Disconnected ⚠" },
+  
+
+    "pulseaudio#headphones": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 Muted",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "scroll-step": 5,
+    "max-volume": 100,
+    "tooltip": false
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": " Muted",
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
+    "scroll-step": 5,
+    "max-volume": 100,
+    "tooltip": false
+  },
+  
+
+  "custom/launcher":{
+    "format": "",  // Search icon (Nerd Font)
+    "on-click": "tofi-drun",
+    "tooltip": "Open Tofi Launcher"
+
+  },
+
+
+
+
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "1": [],
+      "2": []
+      },
+    "format": "{name}: {icon}",
+    "format-icons": {
+      "1": "",
+      "2": "󰈹",
+      "3": "",
+      "default": "○",
+      "active": "●",
+      "urgent": ""
+    },
+    "all-outputs": true
+    }
+}
+
