@@ -6,5 +6,6 @@
     ./git.nix
     ./theme.nix
     ./discord.nix
+    ./waybar.nix
   ];
 }
